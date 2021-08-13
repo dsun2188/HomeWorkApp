@@ -53,11 +53,9 @@ public class GB_HW1 {
                                 40)
                 };
 
-                int minAge = 30;
-        for (Worker worker1 : worker)
-        {
-            if (worker1.age > minAge)
-            {
+        int minAge = 35;
+        for (Worker worker1 : worker) {
+            if (worker1.age > minAge) {
                 worker1.printInfo();
                 System.out.println();
             }
