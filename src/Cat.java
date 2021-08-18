@@ -1,16 +1,22 @@
-class Cat extends Animal {
+public class Cat {
 
-        protected boolean sweem;
-        int jump;
+        private String name;
+        private int appetite;
+        private boolean hungry;
 
-        public Cat(String name, int run, boolean sweem, int jump) {
-            this.name = name;
-            this.run = run;
-            this.sweem = sweem;
-            this.jump = jump;
-        }
+        Cat(String name, int appetite) {
+        this.name = name;
+        this.appetite = appetite;
+        this.hungry = true;
+    }
 
-        public void catInfo() {
-            System.out.println("Имя Кошки: " + name + " /Бег: " + run+ " метров/" + " Плавание:" + sweem);
-        }
+        void info() {
+        String isHungry = !hungry ? "сыт" : "голоден";
+        System.out.println(name + ": " + isHungry);
+    }
+
+        void eat(Plate plate) {
+        if (hungry && plate.decreaseFood(appetite))
+            hungry = false;
+    }
 }
